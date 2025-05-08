@@ -112,3 +112,11 @@ if "content" in st.session_state and st.session_state.content:
     pdf_path = create_pdf(content)
     with open(pdf_path, "rb") as f:
         st.download_button("📄 Download as PDF", f, file_name="seo_content.pdf")
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
